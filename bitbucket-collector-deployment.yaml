@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.7.0 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: bitbucket-collector
+  name: bitbucket-collector
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: bitbucket-collector
+    spec:
+      containers:
+      - image: hygieia-bitbucket-scm-collector
+        name: bitbucket-collector
+        resources: {}
+      restartPolicy: Always
+status: {}

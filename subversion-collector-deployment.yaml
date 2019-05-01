@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.7.0 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: subversion-collector
+  name: subversion-collector
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: subversion-collector
+    spec:
+      containers:
+      - image: hygieia-subversion-scm-collector
+        name: subversion-collector
+        resources: {}
+      restartPolicy: Always
+status: {}
